@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ todolist.name }} !{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ todolist.name }}</h1>
+        <p>Créé le {{ todolist.createdat | date ('d-m-Y')}}</p>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-secondary"> Ajouter </button>
+                    {{ form_end(form) }}
+                </div>
+                <h2>Eléments de la liste</h2>
+                <ul>
+                    {% for item in todolist.items %}
+
+                        <li>
+                            {{ item.name }} {{ item.description }}
+                            <a href="{{ path ("todolist_checked",{'id' : item.id}) }}" class="btn {{ item.checked ?'dissable' : 'btn-outline-dark' }}">X</a>
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

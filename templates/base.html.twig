@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}La To Do List!{% endblock %}</title>
+        {{ encore_entry_link_tags('app') }}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+    {% include 'partials/header.html.twig' %}
+        {% block body %}{% endblock %}
+    {% include 'partials/footer.html.twig' %}
+
+        {{ encore_entry_script_tags('app') }}
+
+    </body>
+</html>

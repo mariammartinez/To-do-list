@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ToDoList!{% endblock %}
+
+{% block body %}
+    <h1>LES LISTES</h1>
+        {% for todolist in todolists %}
+    <div class="container m-2">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action" href="{{ path('todolist_show', {'id' : todolist.id}) }}">{{ todolist.name }}</a>
+            <span>Créé le {{ todolist.createdat | date ('d-m-Y')}}</span>
+
+        </div>
+    </div>
+        {% endfor %}
+
+{% endblock %}
