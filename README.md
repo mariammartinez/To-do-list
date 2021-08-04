@@ -7,14 +7,12 @@ Le Projet consiste à développer une To do list Responsive et fonctionnel en PH
 ### Back
 
 ````
-composer i
+composer install
 
 ````
-Configurer le schema qui se trouve dans le fichier .env
+Configurer le fichier .env
 ````
 php bin/console doctrine:database:create
-
-php bin/console make:migration
  
 php bin/console doctrine:migrations:migrate
 
